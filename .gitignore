@@ -1,0 +1,5 @@
+__pycache__/
+*.pyc
+.venv/
+public/feed.tmp
+public/last_attempt.json
