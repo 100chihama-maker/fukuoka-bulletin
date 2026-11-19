@@ -2,13 +2,17 @@
 
 福岡市集会ワールド向けのイベント・映画上映情報フィードと閲覧ページです。
 
+公開ページ：https://100chihama-maker.github.io/fukuoka-bulletin/
+
+ワールド向けJSON：https://100chihama-maker.github.io/fukuoka-bulletin/feed.json
+
 対象イベント期間は2026年11月20日〜2027年1月31日。映画は掲載された上映日だけを扱います。
 GitHub Actionsは15分ごとに更新を試みます。取得失敗時は前回の情報を保持します。
 サークル・会場・お菓子・人物・福岡市の話題・作品案内は確認日付きの手動登録です。
 
 ## 配信設定
 
-Settings > Pages > Source を GitHub Actions に設定し、Refresh Fukuoka bulletin を実行してください。
+Settings > Pages > Source は GitHub Actions を使用します。Refresh Fukuoka bulletin が取得・検証・配信を行います。
 公開先にはこの専用フォルダーだけを登録します。Unity本体・ログイン情報は含みません。
 `python -m unittest -v test_feed.py` でデータのテストを実行できます。
 
@@ -29,3 +33,5 @@ Settings > Pages > Source を GitHub Actions に設定し、Refresh Fukuoka bull
 ## 作品・舞台
 
 14作品を `#works` から閲覧できます。概要・福岡との関係・視聴先を2026年11月19日に確認。実写／アニメなどの版、収録作品、傑作選を区別し、モデル未確認の情報はその旨を明記しています。配信先は手動登録で、自動監視の対象ではありません。
+
+アニメ9作品は画像の公式掲載元へのリンクも付けています。画像自体はUnity確認用プロジェクトに保存し、この公開リポジトリには含めません。

@@ -1457,6 +1457,10 @@
       {
         "label": "バンダイチャンネル / TVアニメ",
         "url": "https://www.b-ch.com/titles/5880/"
+      },
+      {
+        "label": "画像の出典 / 公式掲載ページ",
+        "url": "https://www.bs11.jp/anime/hakata-tonkotsu-ramens/"
       }
     ],
     "url": "https://www.b-ch.com/titles/5880/",
@@ -1467,8 +1471,9 @@
     "status": "配信は日本向け公式掲載の確認時点。対象話・料金・終了日は各リンクへ。",
     "tags": "",
     "imageSlot": -1,
-    "imageUrl": "",
-    "imageCredit": ""
+    "imageUrl": "https://www.bs11.jp/anime/hakata-tonkotsu-ramens/",
+    "imageCredit": "©2017 木崎ちあき／KADOKAWA アスキー・メディアワークス／博多豚骨ラーメンズ",
+    "imageAvailability": "bundled"
   },
   {
     "id": "work-renai",
@@ -1569,6 +1574,10 @@
       {
         "label": "モデル候補の参考 / 非公式探訪地図",
         "url": "https://www.animepilgrimage.com/ja/maps/anime/ChNY4S1HnwsoVA8BIxa0/uncle-from-another-world"
+      },
+      {
+        "label": "画像の出典 / 公式掲載ページ",
+        "url": "https://isekaiojisan.com/"
       }
     ],
     "url": "https://isekaiojisan.com/onair/",
@@ -1579,8 +1588,9 @@
     "status": "配信は日本向け公式掲載の確認時点。対象話・料金・終了日は各リンクへ。",
     "tags": "",
     "imageSlot": -1,
-    "imageUrl": "",
-    "imageCredit": ""
+    "imageUrl": "https://isekaiojisan.com/",
+    "imageCredit": "©殆ど死んでいる・KADOKAWA刊／異世界おじさん製作委員会",
+    "imageAvailability": "bundled"
   },
   {
     "id": "work-sazae",
@@ -1598,6 +1608,10 @@
       {
         "label": "FOD / 傑作選の公式紹介",
         "url": "https://news.fod.fujitv.co.jp/article/737"
+      },
+      {
+        "label": "画像の出典 / 公式掲載ページ",
+        "url": "https://www.city.fukuoka.lg.jp/sawaraku/sawaraku-tamatebako/kankou/sazaesan/sawaraku_to_sazaesan.html"
       }
     ],
     "url": "https://www.city.fukuoka.lg.jp/sawaraku/sawaraku-tamatebako/kankou/sazaesan/sawaraku_to_sazaesan.html",
@@ -1608,8 +1622,9 @@
     "status": "配信は日本向け公式掲載の確認時点。対象話・料金・終了日は各リンクへ。",
     "tags": "",
     "imageSlot": -1,
-    "imageUrl": "",
-    "imageCredit": ""
+    "imageUrl": "https://www.city.fukuoka.lg.jp/sawaraku/sawaraku-tamatebako/kankou/sazaesan/sawaraku_to_sazaesan.html",
+    "imageCredit": "©長谷川町子美術館／掲載：福岡市",
+    "imageAvailability": "bundled"
   },
   {
     "id": "work-sora",
@@ -1631,6 +1646,10 @@
       {
         "label": "モデル候補の参考 / 非公式探訪DB",
         "url": "https://anime-tourism.jp/t/00286/318-11/"
+      },
+      {
+        "label": "画像の出典 / 公式掲載ページ",
+        "url": "https://kadokawa-animation.jp/lineup/soranootoshimono"
       }
     ],
     "url": "https://kadokawa-animation.jp/lineup/soranootoshimono",
@@ -1641,8 +1660,9 @@
     "status": "配信は日本向け公式掲載の確認時点。対象話・料金・終了日は各リンクへ。",
     "tags": "",
     "imageSlot": -1,
-    "imageUrl": "",
-    "imageCredit": ""
+    "imageUrl": "https://kadokawa-animation.jp/lineup/soranootoshimono",
+    "imageCredit": "©2009 水無月すう／角川書店／空美町新大陸発見部",
+    "imageAvailability": "bundled"
   },
   {
     "id": "work-sketchbook",
@@ -1656,6 +1676,10 @@
       {
         "label": "バンダイチャンネル / 全13話",
         "url": "https://www.b-ch.com/titles/2111/"
+      },
+      {
+        "label": "画像の出典 / 公式掲載ページ",
+        "url": "https://www.b-ch.com/titles/2111/"
       }
     ],
     "url": "https://mag-garden.co.jp/sketchbook/blog/cat4/",
@@ -1666,8 +1690,9 @@
     "status": "配信は日本向け公式掲載の確認時点。対象話・料金・終了日は各リンクへ。",
     "tags": "",
     "imageSlot": -1,
-    "imageUrl": "",
-    "imageCredit": ""
+    "imageUrl": "https://www.b-ch.com/titles/2111/",
+    "imageCredit": "©2007 小箱とたん／マッグガーデン・full color’s",
+    "imageAvailability": "bundled"
   },
   {
     "id": "work-fuukoi",
@@ -1685,6 +1710,10 @@
       {
         "label": "駅名由来の出典 / マンガペディア",
         "url": "https://mangapedia.com/夫婦以上、恋人未満。-7bobgi0db"
+      },
+      {
+        "label": "画像の出典 / 公式掲載ページ",
+        "url": "https://fuukoi-anime.com/"
       }
     ],
     "url": "https://www.video.unext.jp/title/SID0073145",
@@ -1695,8 +1724,9 @@
     "status": "配信は日本向け公式掲載の確認時点。対象話・料金・終了日は各リンクへ。",
     "tags": "",
     "imageSlot": -1,
-    "imageUrl": "",
-    "imageCredit": ""
+    "imageUrl": "https://fuukoi-anime.com/",
+    "imageCredit": "©2022 Yuki Kanamaru／青瞬学院",
+    "imageAvailability": "bundled"
   },
   {
     "id": "work-kimisui",
@@ -1718,6 +1748,10 @@
       {
         "label": "アニメ公式 / 福岡ロケ地マップ",
         "url": "https://kimisui-anime.com/cp/assets/img/locationmap/map_fukuoka.pdf"
+      },
+      {
+        "label": "画像の出典 / 公式掲載ページ",
+        "url": "https://kimisui-anime.com/"
       }
     ],
     "url": "https://yokanavi.com/features/78211",
@@ -1728,8 +1762,9 @@
     "status": "配信は日本向け公式掲載の確認時点。対象話・料金・終了日は各リンクへ。",
     "tags": "君の膵臓を食べたい キミスイ",
     "imageSlot": -1,
-    "imageUrl": "",
-    "imageCredit": ""
+    "imageUrl": "https://kimisui-anime.com/",
+    "imageCredit": "©住野よる／双葉社 ©「君の膵臓をたべたい」アニメフィルムパートナーズ",
+    "imageAvailability": "bundled"
   },
   {
     "id": "work-otori",
@@ -1747,6 +1782,10 @@
       {
         "label": "バンダイチャンネル / なでこメドゥーサ其ノ貳",
         "url": "https://www.b-ch.com/titles/3678/013"
+      },
+      {
+        "label": "画像の出典 / 公式掲載ページ",
+        "url": "https://www.monogatari-series.com/2ndseason/package/otori.html"
       }
     ],
     "url": "https://www.monogatari-series.com/2ndseason/music/index.html",
@@ -1757,8 +1796,9 @@
     "status": "配信は日本向け公式掲載の確認時点。対象話・料金・終了日は各リンクへ。",
     "tags": "千石撫子 中学校 大濠 モデル未確認",
     "imageSlot": -1,
-    "imageUrl": "",
-    "imageCredit": ""
+    "imageUrl": "https://www.monogatari-series.com/2ndseason/package/otori.html",
+    "imageCredit": "©西尾維新／講談社・アニプレックス・シャフト",
+    "imageAvailability": "bundled"
   },
   {
     "id": "work-air",
@@ -1776,6 +1816,10 @@
       {
         "label": "モデル候補の参考 / 非公式舞台探訪",
         "url": "https://dotproducer.at-ninja.jp/air/air.html"
+      },
+      {
+        "label": "画像の出典 / 公式掲載ページ",
+        "url": "https://www.b-ch.com/titles/3155/"
       }
     ],
     "url": "https://www.kyotoanimation.co.jp/works/air/",
@@ -1786,8 +1830,9 @@
     "status": "配信は日本向け公式掲載の確認時点。対象話・料金・終了日は各リンクへ。",
     "tags": "",
     "imageSlot": -1,
-    "imageUrl": "",
-    "imageCredit": ""
+    "imageUrl": "https://www.b-ch.com/titles/3155/",
+    "imageCredit": "©VisualArt’s／Key／翼人伝承会",
+    "imageAvailability": "bundled"
   },
   {
     "id": "work-omusubi",
