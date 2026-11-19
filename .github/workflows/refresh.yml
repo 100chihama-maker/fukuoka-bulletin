@@ -1,0 +1,44 @@
+name: Refresh Fukuoka bulletin
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+  schedule:
+    - cron: '7,22,37,52 * * * *'
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+concurrency:
+  group: bulletin-pages
+  cancel-in-progress: false
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install -r requirements.txt
+      - uses: actions/cache@v4
+        with:
+          path: |
+            public/feed.json
+            public/atlas-*.jpg
+            public/placeholder.jpg
+            public/source_status.json
+          key: bulletin-public-${{ github.run_id }}
+          restore-keys: bulletin-public-
+      - run: python update_feed.py
+      - run: python -m unittest -v test_feed.py
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v4
+        with:
+          path: public
+      - name: Publish feed
+        id: deployment
+        uses: actions/deploy-pages@v4
