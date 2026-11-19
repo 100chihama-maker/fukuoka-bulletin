@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="ja">
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>福岡の掲示板・配信プレビュー</title>
+<style>
+body{font-family:system-ui,sans-serif;background:#f5f3eb;color:#183b40;max-width:1080px;margin:32px auto;padding:20px}
+h1{font-size:30px}nav[hidden],[hidden]{display:none}nav{display:flex;gap:8px;flex-wrap:wrap}
+button,input{font:inherit;padding:12px;border:1px solid #accbc5;border-radius:8px;background:white}
+input{box-sizing:border-box;width:min(100%,420px)}button.active{background:#a5d5c8}#factKinds button.risk.active{background:#f5c98e}
+article{background:white;border-radius:12px;padding:22px;margin:16px 0;display:flow-root}h2{margin-top:0}
+a{color:#16646f;overflow-wrap:anywhere}.photo{width:240px;height:240px;float:right;margin:0 0 16px 24px;background-size:960px 960px}
+small{display:block;color:#647779;line-height:1.7}p{white-space:pre-wrap;line-height:1.7}.factHeading{margin-top:28px}
+@media(max-width:560px){body{margin:8px auto;padding:12px}.photo{float:none;margin:0 0 16px}button{padding:10px}}
+</style>
+<h1>福岡の、いまを見つける。</h1><p id="stamp">読み込み中</p>
+<nav id="tabs" aria-label="ジャンル"></nav>
+<p><input id="search" aria-label="キーワード" placeholder="名前・作品名・映画館・年代などを検索"></p>
+<nav id="peopleKinds" aria-label="人物の種類" hidden></nav>
+<nav id="factKinds" aria-label="福岡市の話題" hidden></nav>
+<section id="factIntro" hidden><h2 class="factHeading" id="factHeading"></h2><p id="factNote"></p></section>
+<nav id="workKinds" aria-label="作品の種類" hidden></nav>
+<p id="workIntro" hidden>福岡ゆかりの14作品。物語の舞台・ロケ地・発案の地・モデル候補を区別しています。視聴先は確認日付きの日本向け配信案内です。</p>
+<main id="items"></main>
+<script>
+const cats=['イベント','映画・上映館','サークル・会場','お土産のお菓子','人物・キャラクター','すごい・やばい福岡市','作品・舞台'];
+let feed,category=0,peopleKind=0,factKind=1,workKind=0;
+if(location.hash==='#works')category=6;
+if(location.hash==='#facts-great'||location.hash==='#facts-risks'){category=5;factKind=location.hash==='#facts-risks'?2:1}
+const $=s=>document.querySelector(s);
+function el(tag,text){const n=document.createElement(tag);if(text)n.textContent=text;return n}
+function render(){
+  if(!feed)return;
+  $('#workKinds').hidden=category!==6;$('#workIntro').hidden=category!==6;
+  document.querySelectorAll('#workKinds button').forEach((b,i)=>b.classList.toggle('active',i===workKind));
+  $('#items').replaceChildren();const query=$('#search').value.toLowerCase();
+  $('#peopleKinds').hidden=category!==4;$('#factKinds').hidden=category!==5;$('#factIntro').hidden=category!==5;
+  document.querySelectorAll('#peopleKinds button').forEach((b,i)=>b.classList.toggle('active',i===peopleKind));
+  document.querySelectorAll('#factKinds button').forEach((b,i)=>b.classList.toggle('active',i+1===factKind));
+  document.querySelectorAll('#tabs button').forEach((b,i)=>b.classList.toggle('active',i===category));
+  const entries=feed.entries.filter(e=>e.category===category&&(category!==4||peopleKind===0||e.peopleKind===peopleKind)&&(category!==5||e.factKind===factKind)&&(category!==6||workKind===0||(e.workMask&(1<<(workKind-1))))&&[e.title,e.subtitle,e.body,e.tags].join(' ').toLowerCase().includes(query));
+  $('#factHeading').textContent=(factKind===1?'ここがすごいぞ福岡市':'ここがやばいぞ福岡市')+' — '+entries.length+'件';
+  $('#factNote').textContent=factKind===1?'地域ブランド・生産と流通・世界的な特色を、対象時点と出典付きで紹介します。':'犯罪統計・過去の事件・事故・災害の記録。対象年と集計範囲を確認できます。';
+  for(const e of entries){
+    const a=el('article');
+    if(e.imageSlot>=0){const p=el('div');p.className='photo';p.style.backgroundImage=`url(atlas-${category}.jpg)`;p.style.backgroundPosition=`-${e.imageSlot%4*240}px -${Math.floor(e.imageSlot/4)*240}px`;a.append(p)}
+    a.append(el('h2',e.title),el('small',e.subtitle),el('p',e.body),el('small','確認：'+e.verifiedAt+' / '+e.status));
+    for(const [label,url] of [[category===5?'出典URL':'案内URL',e.url],[category===1?'上映情報出典':'補足出典',category===6?'':e.referenceUrl],['写真出典',e.imageUrl]]){
+      if(url&&url.startsWith('https://')){const link=el('a',label);link.href=url;link.target='_blank';link.rel='noopener';a.append(link,el('span','　'))}
+    }
+    if(category===6){const links=el('p');for(const item of e.workLinks||[]){if(!item.url.startsWith('https://'))continue;const l=el('a',item.label);l.href=item.url;l.target='_blank';l.rel='noopener';links.append(l,el('br'))}a.append(links)}
+    a.append(el('small',e.imageAvailability==='bundled'?'画像は公式サイトの出典リンクをご覧ください。':e.imageCredit));$('#items').append(a);
+  }
+}
+cats.forEach((t,i)=>{const b=el('button',t);b.onclick=()=>{category=i;peopleKind=0;factKind=1;workKind=0;$('#search').value='';render()};$('#tabs').append(b)});
+['すべて','声優','アニメ','VTuber','音楽・配信'].forEach((t,i)=>{const b=el('button',t);b.onclick=()=>{peopleKind=i;render()};$('#peopleKinds').append(b)});
+['ここがすごいぞ福岡市','ここがやばいぞ福岡市'].forEach((t,i)=>{const b=el('button',t);if(i)b.className='risk';b.onclick=()=>{factKind=i+1;$('#search').value='';render()};$('#factKinds').append(b)});
+['すべて','アニメ','ドラマ','映画','小説'].forEach((t,i)=>{const b=el('button',t);b.onclick=()=>{workKind=i;render()};$('#workKinds').append(b)});
+$('#search').oninput=render;
+fetch('feed.json').then(r=>r.json()).then(f=>{feed=f;$('#stamp').textContent='データ作成：'+f.generatedAt+' / イベント対象：2026/11/20〜2027/01/31';render()}).catch(()=>$('#stamp').textContent='HTTPサーバーでこのフォルダーを開いてください。');
+</script></html>

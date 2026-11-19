@@ -1,0 +1,79 @@
+[
+  {
+    "source": "advent",
+    "url": "https://www.crossroadfukuoka.jp/event/13738",
+    "ok": true,
+    "checkedAt": "2026-11-19 22:15 JST",
+    "count": 4
+  },
+  {
+    "source": "art",
+    "url": "https://www.fukuoka-art-museum.jp/exhibition/",
+    "ok": true,
+    "checkedAt": "2026-11-19 22:15 JST",
+    "count": 9
+  },
+  {
+    "source": "science",
+    "url": "https://www.fukuokacity-kagakukan.jp/sp_exhibition/planning.html",
+    "ok": false,
+    "error": "HTTP Error 503: Service Temporarily Unavailable",
+    "retained": 2
+  },
+  {
+    "source": "kenbi",
+    "url": "https://fukuoka-kenbi.jp/exhibition-event/",
+    "ok": true,
+    "checkedAt": "2026-11-19 22:15 JST",
+    "count": 6
+  },
+  {
+    "source": "cinema-7080",
+    "url": "https://eiga.com/theater/40/400101/7080/",
+    "ok": true,
+    "checkedAt": "2026-11-19 22:15 JST",
+    "count": 40
+  },
+  {
+    "source": "cinema-7001",
+    "url": "https://eiga.com/theater/40/400101/7001/",
+    "ok": true,
+    "checkedAt": "2026-11-19 22:15 JST",
+    "count": 28
+  },
+  {
+    "source": "cinema-7003",
+    "url": "https://eiga.com/theater/40/400101/7003/",
+    "ok": true,
+    "checkedAt": "2026-11-19 22:15 JST",
+    "count": 8
+  },
+  {
+    "source": "cinema-7107",
+    "url": "https://eiga.com/theater/40/400101/7107/",
+    "ok": true,
+    "checkedAt": "2026-11-19 22:15 JST",
+    "count": 22
+  },
+  {
+    "source": "cinema-7103",
+    "url": "https://eiga.com/theater/40/400101/7103/",
+    "ok": true,
+    "checkedAt": "2026-11-19 22:15 JST",
+    "count": 23
+  },
+  {
+    "source": "cinema-7010",
+    "url": "https://eiga.com/theater/40/400101/7010/",
+    "ok": true,
+    "checkedAt": "2026-11-19 22:15 JST",
+    "count": 15
+  },
+  {
+    "source": "cinema-7096",
+    "url": "https://eiga.com/theater/40/400101/7096/",
+    "ok": true,
+    "checkedAt": "2026-11-19 22:15 JST",
+    "count": 36
+  }
+]
