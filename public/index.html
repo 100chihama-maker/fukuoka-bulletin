@@ -22,7 +22,7 @@ small{display:block;color:#647779;line-height:1.7}p{white-space:pre-wrap;line-he
 <p id="workIntro" hidden>福岡ゆかりの14作品。物語の舞台・ロケ地・発案の地・モデル候補を区別しています。視聴先は確認日付きの日本向け配信案内です。</p>
 <main id="items"></main>
 <script>
-const cats=['イベント','映画・上映館','サークル・会場','お土産のお菓子','人物・キャラクター','すごい・やばい福岡市','作品・舞台'];
+const cats=['イベント','映画・上映館','サークル・会場','お土産のお菓子','人物・キャラクター','すごい・やばい福岡市','作品・舞台','タチノミスト'];
 let feed,category=0,peopleKind=0,factKind=1,workKind=0;
 if(location.hash==='#works')category=6;
 if(location.hash==='#facts-great'||location.hash==='#facts-risks'){category=5;factKind=location.hash==='#facts-risks'?2:1}
@@ -52,7 +52,7 @@ function render(){
   }
 }
 cats.forEach((t,i)=>{const b=el('button',t);b.onclick=()=>{category=i;peopleKind=0;factKind=1;workKind=0;$('#search').value='';render()};$('#tabs').append(b)});
-['すべて','声優','アニメ','VTuber','音楽・配信'].forEach((t,i)=>{const b=el('button',t);b.onclick=()=>{peopleKind=i;render()};$('#peopleKinds').append(b)});
+['すべて','声優','アニメ','VTuber','音楽・配信','インフルエンサー'].forEach((t,i)=>{const b=el('button',t);b.onclick=()=>{peopleKind=i;render()};$('#peopleKinds').append(b)});
 ['ここがすごいぞ福岡市','ここがやばいぞ福岡市'].forEach((t,i)=>{const b=el('button',t);if(i)b.className='risk';b.onclick=()=>{factKind=i+1;$('#search').value='';render()};$('#factKinds').append(b)});
 ['すべて','アニメ','ドラマ','映画','小説'].forEach((t,i)=>{const b=el('button',t);b.onclick=()=>{workKind=i;render()};$('#workKinds').append(b)});
 $('#search').oninput=render;
