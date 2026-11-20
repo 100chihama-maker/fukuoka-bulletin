@@ -13,7 +13,7 @@ from PIL import Image,ImageDraw,ImageFont,ImageOps
 ROOT=Path(__file__).resolve().parent
 JST=timezone(timedelta(hours=9))
 START,END=20261120,20270131
-CATEGORIES=['イベント','映画','サークル・会場','お土産のお菓子','福岡ゆかりの人物','すごい・やばい福岡市','作品・舞台']
+CATEGORIES=['イベント','映画','サークル・会場','お土産のお菓子','福岡ゆかりの人物','すごい・やばい福岡市','作品・舞台','タチノミスト']
 THEATERS=[
  ('7080','T・ジョイ博多','https://tjoy.jp/t-joy_hakata/'),
  ('7001','ユナイテッド・シネマ キャナルシティ13','https://www.unitedcinemas.jp/canalcity/'),
@@ -129,7 +129,7 @@ def validate(data):
     for e in es:
         if e['id'] in ids:raise ValueError('Duplicate ID '+e['id'])
         ids.add(e['id'])
-        if e['category'] not in range(7):raise ValueError('Category')
+        if e['category'] not in range(8):raise ValueError('Category')
         if e['category']==6:
             if type(e.get('workMask')) is not int or not 1<=e['workMask']<=15 or not e.get('relationNote'):raise ValueError('Work type / relation missing')
             if e.get('start')!=0 or e.get('end')!=0 or e.get('imageSlot')!=-1:raise ValueError('Work must not expire or reference an atlas')
